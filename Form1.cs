@@ -26,14 +26,22 @@ namespace các_phép_tính_đơn_giản
             }
             else
             {
-                if (name = "hanh" && pass = "123")
+                if (name == "hanh" && pass == "123")
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
-                    DialogResult result= MessageBox.Show("
+                    DialogResult result = MessageBox.Show("Name va pass khong dung ! ", "Login", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                    if (result == DialogResult.Cancel)
+                    {
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        txtname.Focus();
+                    }
                 }
             }
         }
